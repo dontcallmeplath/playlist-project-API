@@ -1,0 +1,74 @@
+[
+  {
+    "model": "playlistapi.friend",
+    "pk": 1,
+    "fields": {
+      "email": "simple@example.com",
+      "creator": "3"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 2,
+    "fields": {
+      "email": "very.common@example.com",
+      "creator": "2"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 3,
+    "fields": {
+      "email": "abc@example.co.uk",
+      "creator": "2"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 4,
+    "fields": {
+      "email": "sylviarosemarie@gmail.com",
+      "creator": "1"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 5,
+    "fields": {
+      "email": "sylves2daresq@hotmail.com",
+      "creator": "1"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 6,
+    "fields": {
+      "email": "simple2@example.com",
+      "creator": "4"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 7,
+    "fields": {
+      "email": "very.common2@example.com",
+      "creator": "4"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 8,
+    "fields": {
+      "email": "very.common3@example.com",
+      "creator": "5"
+    }
+  },
+  {
+    "model": "playlistapi.friend",
+    "pk": 9,
+    "fields": {
+      "email": "very.common4@example.com",
+      "creator": "6"
+    }
+  }
+]
