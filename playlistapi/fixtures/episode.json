@@ -1,0 +1,158 @@
+[
+  {
+    "model": "playlistapi.episode",
+    "pk": 1,
+    "fields": {
+      "series_name": "Charmed",
+      "episode_name": "Morality Bites",
+      "serial": "02:02",
+      "description": "When Phoebe has a vision of herself being burnt to death, the sisters travel ten years into the future to learn what happened. Only to discover that she used her powers to kill Cal Greene, causing a local D.A. named Nathanial Pratt to begin modern day witch trials as a platform for political office.",
+      "image": "https://www.imdb.com/title/tt0158552/mediaviewer/rm1499738112/?ref_=ext_shr_lnk",
+      "rating": "TV-MA"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 2,
+    "fields": {
+      "series_name": "Buffy The Vampire Slayer",
+      "episode_name": "Out of My Mind",
+      "serial": "05:04",
+      "description": "While Riley's health begins to deteriorate, Spike and Harmony force a surgeon to remove the behavior modification chip embedded in Spike's brain.",
+      "image": "https://www.imdb.com/title/tt0118276/mediaviewer/rm2126983424/?ref_=ext_shr_lnk",
+      "rating": "TV-MA"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 3,
+    "fields": {
+      "series_name": "Community",
+      "episode_name": "Abed's Uncontrollable Christmas",
+      "serial": "02:11",
+      "description": "Abed begins experiencing the world in stop motion. His study group enlist the help of psychology professor Ian Duncan to end the delusion, but turn against Duncan after he reveals Abed's delusion began when he learned his mother is not visiting for Christmas.",
+      "image": "",
+      "rating": ""
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 4,
+    "fields": {
+      "series_name": "Friends",
+      "episode_name": "The One Where Everybody Finds Out",
+      "serial": "05:14",
+      "description": "Phoebe Buffay discovers that Monica Geller and Chandler Bing are secretly dating, and decides to mess with them by pretending to flirt with Chandler.",
+      "image": "https://www.imdb.com/title/tt0108778/mediaviewer/rm2513109504/?ref_=ext_shr_lnk",
+      "rating": "TV-14"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 5,
+    "fields": {
+      "series_name": "Living Single",
+      "episode_name": "There's Got to Be a Morning After",
+      "serial": "02:01",
+      "description": "Maxine and Kyle spend the night together after drowning their sorrows in a bottle of tequila.",
+      "image": "https://www.imdb.com/title/tt0106056/mediaviewer/rm3818099201/?ref_=ext_shr_lnk",
+      "rating": "TV-14"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 6,
+    "fields": {
+      "series_name": "Seinfeld",
+      "episode_name": "The Red Dot",
+      "serial": "03:12",
+      "description": "Elaine gets George a job at Pendant Publishing. As a thank you, he buys her a cashmere sweater on mark down.",
+      "image": "https://www.imdb.com/title/tt0098904/mediaviewer/rm1405813248/?ref_=ext_shr_lnk",
+      "rating": "TV-14"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 7,
+    "fields": {
+      "series_name": "Over the Garden Wall",
+      "episode_name": "Songs of the Dark Lantern",
+      "serial": "01:04",
+      "description": "Wirt and Greg visit a tavern to ask for directions to Adelaide's house. The people in the tavern warn the brothers about the Beast, telling them that the creature turns people into trees of oil to burn in his lantern. Based on this description, Wirt concludes that the Woodsman must be the Beast. Hearing Beatrice in distress, Wirt steals a talking horse named Fred and rides to her rescue. He finds Beatrice unconscious next to the Woodsman, and Wirt and Greg ride off with her. Meanwhile, the Beast reminds the Woodsman that the flame inside his lantern contains his daughter's soul, and that he must cut down Edelwood trees so the fire can keep her alive.",
+      "image": "",
+      "rating": "TV-14"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 8,
+    "fields": {
+      "series_name": "Great British Bake Off",
+      "episode_name": "Episode 6: Pastry",
+      "serial": "12:06",
+      "description": "For the signature, the bakers were tasked with making two batches of glazed or iced chouxnuts: 6 filled, 6 not filled, to be done in 2 hours. For the technical challenge, Paul required the bakers to make a large baklava. They were asked to layer Filo pastry with a pistachio and walnut filling, cut into a star design, in 2 hours and 45 minutes. For the showstopper, the bakers were given the intricate task of making a Terrine pie, in 41⁄2 hours. The pies needed to have an ornated pastry decoration on the outside and a neat pattern or design when cut open.",
+      "image": "https://www.imdb.com/title/tt1877368/mediaviewer/rm2239552513/?ref_=ext_shr_lnk",
+      "rating": "TV-PG"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 9,
+    "fields": {
+      "series_name": "Derry Girls",
+      "episode_name": "Episode 3",
+      "serial": "01:03",
+      "description": "After cramming all night for a history exam, the friends see a dog resembling Erin's recently deceased pet, Toto. They pursue it into a church where it flees to the upper levels and urinates. The urine drips down onto a statue of the Virgin Mary, which Clare, overcome by sleep deprivation and caffeine, imagines is weeping. Michelle plays along, believing the friends will not have to sit their exam if they are witnesses to a miracle. A handsome young priest, Father Peter, investigates. He suggests that Toto was resurrected to lead Erin to the church, which appears to be confirmed when Toto's grave in the back garden is discovered to be empty.",
+      "image": "https://www.imdb.com/title/tt7120662/mediaviewer/rm4023084800/?ref_=ext_shr_lnk",
+      "rating": "TV-14"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 10,
+    "fields": {
+      "series_name": "Rosehaven",
+      "episode_name": "Episode 2",
+      "serial": "02:02",
+      "description": "Barbara won't make a speech at the local primary school (or do tuckshop duty), and a reluctant Daniel steps in. But his resolve is put to the test when he and Emma are accused of stealing.",
+      "image": "https://www.imdb.com/title/tt5226698/mediaviewer/rm2860419073/?ref_=ext_shr_lnk",
+      "rating": "TV-14"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 11,
+    "fields": {
+      "series_name": "What We Do in the Shadows",
+      "episode_name": "Baron's Night Out",
+      "serial": "01:06",
+      "description": "Baron Afanas wakes up and demands the vampires take him out to see the city. The vampires are sick and tired of the Baron's old fashioned ideas, so they intend on killing him. The vampires and the Baron go out and spend the night going to various bars and nightclubs, where they drink blood of drugged clubbers and allow the Baron to eat pizza (with disastrous results as vampires cannot consume human food without being violently sick). After returning home in the morning, the Baron is accidentally killed by sunlight when Guillermo opens the front door.",
+      "image": "https://www.imdb.com/title/tt7908628/mediaviewer/rm3277725953/?ref_=ext_shr_lnk",
+      "rating": "TV-MA"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 12,
+    "fields": {
+      "series_name": "Fleabag",
+      "episode_name": "Episode 5",
+      "serial": "02:05",
+      "description": "The priest informs the family that he is no longer able to officiate at the wedding, before telling Fleabag not to visit his church again. Claire falls into a state of panic after having second thoughts about her new haircut. Fleabag comforts her and Claire is further reassured when Klare declares he loves her new look. Fleabag covers for Claire and argues with Martin, who is concerned that Claire is considering leaving him. Fleabag gets a visit from the priest, who reveals his feelings for her are more than physical. The two have sex, and Fleabag pushes the audience away.",
+      "image": "https://www.imdb.com/title/tt5687612/mediaviewer/rm683042304/?ref_=ext_shr_lnk",
+      "rating": "TV-MA"
+    }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 13,
+    "fields": {
+      "series_name": "Crashing",
+      "episode_name": "Episode 1",
+      "serial": "01:01",
+      "description": "Lulu travels to London to surprise her childhood friend Anthony, who lives in a condemned hospital as a property guardian in exchange for cheapened rent. Anthony lives with a number of housemates including his `anal` fiancée Kate, their overtly sexual friend Sam, French artist Melody, and the timid Fred. Sam convinces Kate to throw him an elaborate scavenger hunt as his birthday party, which is attended by a number of friends and Kate's colleagues, including the recently divorced Colin, who fascinates Melody.",
+      "image": "https://www.imdb.com/title/tt5295524/mediaviewer/rm4097635585/?ref_=ext_shr_lnk",
+      "rating": "TV-MA"
+    }
+  }
+]

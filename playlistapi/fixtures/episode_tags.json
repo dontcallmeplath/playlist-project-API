@@ -1,0 +1,50 @@
+[
+  {
+    "model": "playlistapi.episodetag",
+    "pk": 1,
+    "fields": {
+      "episode": 1,
+      "tag": 2
+    }
+  },
+  {
+    "model": "playlistapi.episodetag",
+    "pk": 2,
+    "fields": {
+      "episode": 2,
+      "tag": 4
+    }
+  },
+  {
+    "model": "playlistapi.episodetag",
+    "pk": 3,
+    "fields": {
+      "episode": 2,
+      "tag": 1
+    }
+  },
+  {
+    "model": "playlistapi.episodetag",
+    "pk": 4,
+    "fields": {
+      "episode": 2,
+      "tag": 2
+    }
+  },
+  {
+    "model": "playlistapi.episodetag",
+    "pk": 5,
+    "fields": {
+      "episode": 3,
+      "tag": 4
+    }
+  },
+  {
+    "model": "playlistapi.episodetag",
+    "pk": 6,
+    "fields": {
+      "episode": 4,
+      "tag": 4
+    }
+  }
+]

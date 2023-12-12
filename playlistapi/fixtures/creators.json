@@ -1,0 +1,62 @@
+[
+  {
+    "model": "playlistapi.creator",
+    "pk": 1,
+    "fields": {
+      "bio": "Immersed in the world of TV scripts and storytelling magic. Whether it's dissecting plot twists or analyzing character development, let's discuss the art of television writing. Grab your popcorn; it's time for a literary TV adventure!",
+      "profile_image": "https://i.postimg.cc/L5ZpK1rc/Cat.png",
+      "created_on": "2023-12-06",
+      "user": "6"
+    }
+  },
+  {
+    "model": "playlistapi.creator",
+    "pk": 2,
+    "fields": {
+      "bio": "Balancing the burn with binge-watching! From workout routines to wellness documentaries, let's break a sweat and then unwind in front of the TV. Share your favorite fitness shows and get ready to Netflix-and-chill after a good workout.",
+      "profile_image": "https://i.postimg.cc/bdcjzvPs/Cockatoo.png",
+      "created_on": "2023-12-05",
+      "user": "5"
+    }
+  },
+  {
+    "model": "playlistapi.creator",
+    "pk": 3,
+    "fields": {
+      "bio": "Feeding my love for TV with mouth-watering culinary shows! From cooking competitions to global gastronomic adventures, join me as we savor the flavors of the small screen. Bon appétit in front of the TV!",
+      "profile_image": "https://i.postimg.cc/xjkJTFY2/Dog.png",
+      "created_on": "2023-12-04",
+      "user": "4"
+    }
+  },
+  {
+    "model": "playlistapi.creator",
+    "pk": 4,
+    "fields": {
+      "bio": "In the ever-evolving world of television tech, I'm on the cutting edge of the latest gadgets and innovations. Let's geek out over 4K, OLED, and immersive sound systems. Ready for the ultimate home theater experience?",
+      "profile_image": "https://i.postimg.cc/J79yyc4B/Hamster.png",
+      "created_on": "2023-12-03",
+      "user": "3"
+    }
+  },
+  {
+    "model": "playlistapi.creator",
+    "pk": 5,
+    "fields": {
+      "bio": "Embarking on intergalactic adventures and diving into the unknown of science fiction TV. Join me as we explore futuristic landscapes, unravel mysteries, and discuss the mind-bending concepts that make sci-fi irresistible.",
+      "profile_image": "https://i.postimg.cc/YC7hRrFr/Rabbit.png",
+      "created_on": "2023-12-02",
+      "user": "2"
+    }
+  },
+  {
+    "model": "playlistapi.creator",
+    "pk": 6,
+    "fields": {
+      "bio": "Dedicated to the small screen, I'm on a perpetual quest for the best shows out there. From binge-worthy dramas to laugh-out-loud comedies, let's swap recommendations and dissect the latest plot twists!",
+      "profile_image": "https://i.postimg.cc/gk8x3Xnt/Raccoon.png",
+      "created_on": "2023-12-01",
+      "user": "1"
+    }
+  }
+]

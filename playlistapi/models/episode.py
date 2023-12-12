@@ -10,3 +10,4 @@ class Episode(models.Model):
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=155)
     # TV-Y, TV-Y7, TV-Y7 FV, TV-G, TV-PG, TV-14, TV-MA
     rating = models.CharField(max_length=4)
+    tags = models.ManyToManyField("Tag", through='EpisodeTag')
