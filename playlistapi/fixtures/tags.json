@@ -1,0 +1,142 @@
+[
+  {
+    "model": "playlistapi.tag",
+    "pk": 1,
+    "fields": {
+      "label": "Drama"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 2,
+    "fields": {
+      "label": "Comedy"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 3,
+    "fields": {
+      "label": "Sci-Fi"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 4,
+    "fields": {
+      "label": "Fantasy"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 5,
+    "fields": {
+      "label": "Mystery"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 6,
+    "fields": {
+      "label": "Thriller"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 7,
+    "fields": {
+      "label": "Action"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 8,
+    "fields": {
+      "label": "Romance"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 9,
+    "fields": {
+      "label": "Historical"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 10,
+    "fields": {
+      "label": "Documentary"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 11,
+    "fields": {
+      "label": "Superhero"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 12,
+    "fields": {
+      "label": "Sitcom"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 13,
+    "fields": {
+      "label": "Crime"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 14,
+    "fields": {
+      "label": "Horror"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 15,
+    "fields": {
+      "label": "Adventure"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 16,
+    "fields": {
+      "label": "Reality TV"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 17,
+    "fields": {
+      "label": "Travel"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 18,
+    "fields": {
+      "label": "Political"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 19,
+    "fields": {
+      "label": "Western"
+    }
+  },
+  {
+    "model": "playlistapi.tag",
+    "pk": 20,
+    "fields": {
+      "label": "Family"
+    }
+  }
+]

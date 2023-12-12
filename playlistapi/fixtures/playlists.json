@@ -1,1 +1,192 @@
-[{}]
+[
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "NeckBromancer",
+      "creator": 1,
+      "episode": 1
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "NeckBromancer",
+      "creator": 1,
+      "episode": 2
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "NeckBromancer",
+      "creator": 1,
+      "episode": 3
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "NeckBromancer",
+      "creator": 1,
+      "episode": 4
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "NeckBromancer",
+      "creator": 1,
+      "episode": 5
+    }
+  },
+
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Brain go Brrrrr",
+      "creator": 2,
+      "episode": 6
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Brain go Brrrrr",
+      "creator": 2,
+      "episode": 7
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Brain go Brrrrr",
+      "creator": 2,
+      "episode": 8
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Brain go Brrrrr",
+      "creator": 2,
+      "episode": 9
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Party Rock",
+      "creator": 3,
+      "episode": 10
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Party Rock",
+      "creator": 3,
+      "episode": 11
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Party Rock",
+      "creator": 3,
+      "episode": 12
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Party Rock",
+      "creator": 3,
+      "episode": 13
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Switcheroo",
+      "creator": 4,
+      "episode": 5
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Switcheroo",
+      "creator": 4,
+      "episode": 4
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Switcheroo",
+      "creator": 4,
+      "episode": 3
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "All Buttered UP",
+      "creator": 5,
+      "episode": 3
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "All Buttered UP",
+      "creator": 5,
+      "episode": 2
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "All Buttered UP",
+      "creator": 5,
+      "episode": 1
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Who Culled Know",
+      "creator": 6,
+      "episode": 13
+    }
+  },
+  {
+    "model": "playlistapi.playlist",
+    "pk": 1,
+    "fields": {
+      "name": "Who Culled Know",
+      "creator": 6,
+      "episode": 10
+    }
+  }
+]
