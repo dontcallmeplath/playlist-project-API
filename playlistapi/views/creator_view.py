@@ -9,4 +9,4 @@ class CreatorSerializer(serializers.ModelSerializer):
     """Playlist Creator view"""
     class Meta:
         model = Creator
-        fields = ('id', 'bio', 'profile_image_url', 'created_on', 'active', 'user_id')
+        fields = ('id', 'bio', 'profile_image', 'created_on', 'user_id')

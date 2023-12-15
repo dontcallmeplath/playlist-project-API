@@ -7,7 +7,7 @@ from . import settings
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"tags", TagView, "tag")
-router.register(r"playlists", PlaylistView, "playlists")
+router.register(r"playlists", PlaylistView, "playlist")
 router.register(r"friends", FriendView, "friend")
 router.register(r"episodes", EpisodeView, "episode")
 

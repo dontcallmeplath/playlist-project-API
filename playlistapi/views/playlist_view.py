@@ -28,7 +28,7 @@ class PlaylistView(ViewSet):
             playlists = Playlist.objects.filter(creator__user=request.auth.user)
         else:
             # otherwise get all playlists & filter by approved and dates in the past
-            playlists = Playlist.objects.all()
+            playlists = Playlist.objects.all().order_by("-name")
         
         serializer = PlaylistSerializer(playlists, many=True, context={'request': request})
         return Response(serializer.data)

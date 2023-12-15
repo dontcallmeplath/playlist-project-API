@@ -4,7 +4,8 @@
     "pk": 1,
     "fields": {
       "email": "simple@example.com",
-      "creator": "3"
+      "creator": "3",
+      "name": "Friend 1"
     }
   },
   {
@@ -12,7 +13,8 @@
     "pk": 2,
     "fields": {
       "email": "very.common@example.com",
-      "creator": "2"
+      "creator": "2",
+      "name": "Friend 2"
     }
   },
   {
@@ -20,7 +22,8 @@
     "pk": 3,
     "fields": {
       "email": "abc@example.co.uk",
-      "creator": "2"
+      "creator": "2",
+      "name": "Friend 3"
     }
   },
   {
@@ -28,7 +31,8 @@
     "pk": 4,
     "fields": {
       "email": "sylviarosemarie@gmail.com",
-      "creator": "1"
+      "creator": "1",
+      "name": "Friend 4"
     }
   },
   {
@@ -36,7 +40,8 @@
     "pk": 5,
     "fields": {
       "email": "sylves2daresq@hotmail.com",
-      "creator": "1"
+      "creator": "1",
+      "name": "Friend 5"
     }
   },
   {
@@ -44,7 +49,8 @@
     "pk": 6,
     "fields": {
       "email": "simple2@example.com",
-      "creator": "4"
+      "creator": "4",
+      "name": "Friend 6"
     }
   },
   {
@@ -52,7 +58,8 @@
     "pk": 7,
     "fields": {
       "email": "very.common2@example.com",
-      "creator": "4"
+      "creator": "4",
+      "name": "Friend 7"
     }
   },
   {
@@ -60,7 +67,8 @@
     "pk": 8,
     "fields": {
       "email": "very.common3@example.com",
-      "creator": "5"
+      "creator": "5",
+      "name": "Friend 8"
     }
   },
   {
@@ -68,7 +76,8 @@
     "pk": 9,
     "fields": {
       "email": "very.common4@example.com",
-      "creator": "6"
+      "creator": "6",
+      "name": "Friend 9"
     }
   }
 ]

@@ -1,5 +1,4 @@
-#!/bin/bash
-
+# !/bin/bash
 rm db.sqlite3
 rm -rf ./playlistapi/migrations
 python3 manage.py migrate

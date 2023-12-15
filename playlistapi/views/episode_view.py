@@ -18,9 +18,22 @@ class EpisodeView(ViewSet):
         Returns:
             Response -- JSON serialized array
         """
-        episodes= Episode.objects.all()
+        episodes = Episode.objects.all()
         serializer = EpisodeSerializer(episodes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def retrieve(self, request, pk=None):
+        """Handle GET requests for a single Episode
+
+        Returns:
+            Response -- JSON serialized object
+        """
+        try:
+            episode = Episode.objects.get(pk=pk)
+            serializer = EpisodeSerializer(episode, context={"request": request})
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Episode.DoesNotExist as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
     
     def create(self, request):
         serializer = EpisodeSerializer(data=request.data)

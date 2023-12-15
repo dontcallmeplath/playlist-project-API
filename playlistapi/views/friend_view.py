@@ -8,7 +8,7 @@ from playlistapi.models import Friend, Creator
 
 class FriendView(ViewSet):
     def list(self, request):
-        friends = Friend.objects.all().order_by("email")
+        friends = Friend.objects.all()
         serializer = FriendSerializer(friends, many=True)
         return Response(serializer.data)
     
@@ -75,14 +75,14 @@ class FriendView(ViewSet):
 class UserSerializer(ModelSerializer):
     """JSON serializer for user tied to creator"""
 
-    full_name = SerializerMethodField()
+    full_name = SerializerMethodField('get_full_name')
 
     def get_full_name(self, obj):
         return f'{obj.first_name} {obj.last_name}'
 
     class Meta:
         model = User
-        fields = ("id", "full_name",)
+        fields = ("full_name",)
 
 class CreatorSerializer(ModelSerializer):
     """JSON serializer for creator of friend"""
@@ -96,11 +96,14 @@ class CreatorSerializer(ModelSerializer):
 class FriendSerializer(ModelSerializer):
     """JSON serializer for friends"""
 
-    is_creator = SerializerMethodField()
     creator = CreatorSerializer(many=False)
 
     def get_is_creator(self, obj):
-        return self.context["request"].user == obj.creator.user
+        user = None
+        request = self.context.get("request")
+        if request and hasattr(request, "user"):
+            user = request.user
+        return user == obj.creator.user
 
     class Meta:
         model = Friend
