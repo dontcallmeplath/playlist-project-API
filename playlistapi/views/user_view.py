@@ -12,8 +12,10 @@ from .creator_view import CreatorSerializer
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'first_name', 'last_name', 'username', 'email', 'password')  # add other fields as needed
+        fields = ('id', 'username', 'email', 'password','first_name', 'last_name')  # add other fields as needed
         extra_kwargs = {'password': {'write_only': True}}
+
+
 
 class UserView(ViewSet):
     queryset = User.objects.all()
@@ -24,20 +26,21 @@ class UserView(ViewSet):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = User.objects.create_user(
-                username=serializer.validated_data['username'],
-                first_name=serializer.validated_data['first_name'],
-                last_name=serializer.validated_data['last_name'],
+                username=serializer.validated_data['email'],
                 email=serializer.validated_data['email'],
-                password=serializer.validated_data['password']
+                password=serializer.validated_data['password'],
+                first_name=serializer.validated_data['first_name'],
+                last_name=serializer.validated_data['last_name']
             )
             
-            token, created = Token.objects.get_or_create(user=user)
+            token = Token.objects.create(user=user)
 
             data = {
                 'valid': True,
                 'token': token.key,
-                'staff': token.user.is_staff,
-                'id': token.user.id
+                'staff': user.is_staff,
+                'id': user.id,
+                'name': user.first_name
             }
 
             creator = Creator.objects.create(
@@ -75,7 +78,8 @@ class UserView(ViewSet):
                 'valid': True,
                 'token': token.key,
                 'staff': token.user.is_staff,
-                'id': token.user.id
+                'id': token.user.id,
+                'name': token.user.first_name
             }
             return Response(data)
         else:
