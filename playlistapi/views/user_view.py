@@ -86,3 +86,26 @@ class UserView(ViewSet):
             # Bad login details were provided. So we can't log the user in.
             data = { 'valid': False }
             return Response(data)
+
+    def list(self, request):
+        """Handle GET requests for all users
+        
+        Returns:
+            Response -- JSON serialized array
+        """
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def retrieve(self, request, pk=None):
+        """Handle GET requests for a single User
+
+        Returns:
+            Response -- JSON serialized object
+        """
+        try:
+            user = User.objects.get(pk=pk)
+            serializer = UserSerializer(user, context={"request": request})
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except User.DoesNotExist as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)

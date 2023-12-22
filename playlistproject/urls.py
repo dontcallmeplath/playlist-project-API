@@ -11,7 +11,7 @@ router.register(r"playlists", PlaylistView, "playlist")
 router.register(r"friends", FriendView, "friend")
 router.register(r"episodes", EpisodeView, "episode")
 router.register(r"episode_tags", EpisodeTagView, "episode tag")
-router.register(r"users", UserView, "user") # doesn't work bc there's no list method in userview
+router.register(r"users", UserView, "user") 
 
 urlpatterns = [
     path('', include(router.urls)),
