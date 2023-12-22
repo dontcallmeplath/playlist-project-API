@@ -12,10 +12,8 @@ from .creator_view import CreatorSerializer
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password','first_name', 'last_name')  # add other fields as needed
+        fields = ('id', 'username', 'email', 'password','first_name', 'last_name', )  # add other fields as needed
         extra_kwargs = {'password': {'write_only': True}}
-
-
 
 class UserView(ViewSet):
     queryset = User.objects.all()
@@ -107,5 +105,25 @@ class UserView(ViewSet):
             user = User.objects.get(pk=pk)
             serializer = UserSerializer(user, context={"request": request})
             return Response(serializer.data, status=status.HTTP_200_OK)
+        except User.DoesNotExist as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+    def update(self, request, pk):
+        try:
+            user = User.objects.get(pk=pk)
+            if user.id == int(pk):
+                serializer = UserSerializer(data=request.data)
+                if serializer.is_valid():
+                    user.username = serializer.validated_data["email"]
+                    user.email = serializer.validated_data["email"]
+                    user.first_name = serializer.validated_data["first_name"]
+                    user.last_name = serializer.validated_data["last_name"]
+                    user.password = user.password
+                    user.save()
+
+                    serializer = UserSerializer(user, context={'request': request})
+                    return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "You do not have admin privileges"}, status=status.HTTP_403_FORBIDDEN)
         except User.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)

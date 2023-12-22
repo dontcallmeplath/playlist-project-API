@@ -72,39 +72,39 @@ class FriendView(ViewSet):
         except Exception as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
-class UserSerializer(ModelSerializer):
-    """JSON serializer for user tied to creator"""
+# class UserSerializer(ModelSerializer):
+#     """JSON serializer for user tied to creator"""
 
-    full_name = SerializerMethodField('get_full_name')
+#     full_name = SerializerMethodField('get_full_name')
 
-    def get_full_name(self, obj):
-        return f'{obj.first_name} {obj.last_name}'
+#     def get_full_name(self, obj):
+#         return f'{obj.first_name} {obj.last_name}'
 
-    class Meta:
-        model = User
-        fields = ("full_name",)
+#     class Meta:
+#         model = User
+#         fields = ("full_name",)
 
-class CreatorSerializer(ModelSerializer):
-    """JSON serializer for creator of friend"""
+# class CreatorSerializer(ModelSerializer):
+#     """JSON serializer for creator of friend"""
 
-    user = UserSerializer(many=False)
+#     user = UserSerializer(many=False)
 
-    class Meta:
-        model = Creator
-        fields = ("id", "user",)
+#     class Meta:
+#         model = Creator
+#         fields = ("id", "user",)
 
 class FriendSerializer(ModelSerializer):
     """JSON serializer for friends"""
 
-    creator = CreatorSerializer(many=False)
+    # creator = CreatorSerializer(many=False)
 
-    def get_is_creator(self, obj):
-        user = None
-        request = self.context.get("request")
-        if request and hasattr(request, "user"):
-            user = request.user
-        return user == obj.creator.user
+    # def get_is_creator(self, obj):
+    #     user = None
+    #     request = self.context.get("request")
+    #     if request and hasattr(request, "user"):
+    #         user = request.user
+    #     return user == obj.creator.user
 
     class Meta:
         model = Friend
-        fields = "__all__"        
+        fields = ("creator_id", "email", "name")        
