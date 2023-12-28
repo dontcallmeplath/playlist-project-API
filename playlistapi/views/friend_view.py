@@ -116,4 +116,4 @@ class FriendSerializer(ModelSerializer):
 
     class Meta:
         model = Friend
-        fields = ("creator_id", "email", "name")        
+        fields = ("creator_id", "email", "name", "id")        

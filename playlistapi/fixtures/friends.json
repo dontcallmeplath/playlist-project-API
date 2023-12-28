@@ -4,8 +4,8 @@
     "pk": 1,
     "fields": {
       "email": "simple@example.com",
-      "creator": "3",
-      "name": "Friend 1"
+      "creator": "2",
+      "name": "Ashley Conley"
     }
   },
   {
@@ -13,8 +13,8 @@
     "pk": 2,
     "fields": {
       "email": "very.common@example.com",
-      "creator": "2",
-      "name": "Friend 2"
+      "creator": "3",
+      "name": "Ryan Lowe"
     }
   },
   {
@@ -23,7 +23,7 @@
     "fields": {
       "email": "abc@example.co.uk",
       "creator": "2",
-      "name": "Friend 3"
+      "name": "Tiffany Haywood"
     }
   },
   {
@@ -32,7 +32,7 @@
     "fields": {
       "email": "sylviarosemarie@gmail.com",
       "creator": "1",
-      "name": "Friend 4"
+      "name": "Daniel Allen"
     }
   },
   {
@@ -41,7 +41,7 @@
     "fields": {
       "email": "sylves2daresq@hotmail.com",
       "creator": "1",
-      "name": "Friend 5"
+      "name": "Sylvia Tennant"
     }
   },
   {
@@ -50,7 +50,7 @@
     "fields": {
       "email": "simple2@example.com",
       "creator": "4",
-      "name": "Friend 6"
+      "name": "Val Freeman"
     }
   },
   {
@@ -59,7 +59,7 @@
     "fields": {
       "email": "very.common2@example.com",
       "creator": "4",
-      "name": "Friend 7"
+      "name": "Steve Brown Lee"
     }
   },
   {
@@ -68,7 +68,7 @@
     "fields": {
       "email": "very.common3@example.com",
       "creator": "5",
-      "name": "Friend 8"
+      "name": "Holly Collins"
     }
   },
   {
@@ -77,7 +77,7 @@
     "fields": {
       "email": "very.common4@example.com",
       "creator": "6",
-      "name": "Friend 9"
+      "name": "Michael Kraft"
     }
   }
 ]
