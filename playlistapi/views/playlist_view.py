@@ -15,7 +15,7 @@ class PlaylistSerializer(ModelSerializer):
     
     class Meta:
         model = Playlist
-        fields = ['id', 'name', 'creator', 'episode']
+        fields = ['id', 'name', 'creator', 'episode']  
 
 class PlaylistView(ViewSet):
     def list(self, request):

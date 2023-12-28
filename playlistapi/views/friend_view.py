@@ -8,8 +8,17 @@ from playlistapi.models import Friend, Creator
 
 class FriendView(ViewSet):
     def list(self, request):
-        friends = Friend.objects.all()
-        serializer = FriendSerializer(friends, many=True)
+        # get query parameters from request for specific user
+        creator = self.request.query_params.get('creator', None)
+
+        # filter to allow for all and specific user's friends
+        # if checks for specific user
+        if creator is not None and creator == "current":
+            friends = Friend.objects.filter(creator__user=request.auth.user)
+        else:
+            return Response({"message": "This creator hasn't added friends yet."}, status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = FriendSerializer(friends, many=True, context={'request': request})
         return Response(serializer.data)
     
     def retrieve(self, request, pk=None):
