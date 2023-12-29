@@ -154,5 +154,17 @@
       "image": "https://www.imdb.com/title/tt5295524/mediaviewer/rm4097635585/?ref_=ext_shr_lnk",
       "rating": "TV-MA"
     }
+  },
+  {
+    "model": "playlistapi.episode",
+    "pk": 14,
+    "fields": {
+      "series_name": "Cowboy Bebop",
+      "episode_name": "The Real Folk Blues, Part I",
+      "serial": "01:26",
+      "description": "Violence erupts on the streets of Tharsis; the Red Dragon crime syndicate is in the middle of a succession war, and many old scores are being settled.",
+      "image": "https://www.imdb.com/title/tt0213338/mediaviewer/rm2077174785/?ref_=tt_ov_i",
+      "rating": "TV-14"
+    }
   }
 ]

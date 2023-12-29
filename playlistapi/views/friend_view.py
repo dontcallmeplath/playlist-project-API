@@ -36,10 +36,12 @@ class FriendView(ViewSet):
     
     def create(self, request):
         email = request.data.get('email')
+        name = request.data.get('name')
         creator_id = Creator.objects.get(user=request.user.id)
 
         friend = Friend.objects.create(
             email=email,
+            name=name,
             creator=creator_id,
         )
 
