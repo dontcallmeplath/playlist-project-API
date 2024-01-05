@@ -1,4 +1,4 @@
-from django.http import HttpResponseServerError
+# from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework.serializers import ModelSerializer
@@ -10,25 +10,24 @@ from django.contrib.auth.models import User
 
 class PlaylistSerializer(ModelSerializer):
     
-    creator = CreatorSerializer(many=False)
-    episode = EpisodeSerializer(many=False)
+    creator_id = CreatorSerializer(many=False).fields['id']
     
     class Meta:
         model = Playlist
-        fields = ['id', 'name', 'creator', 'episode']  
+        fields = ('id', 'name', 'creator_id', )
 
 class PlaylistView(ViewSet):
     def list(self, request):
         # get query parameters from request for specific user
-        creator = self.request.query_params.get('creator', None)
+        creator = self.request.query_params.get('creator_id', None)
 
         # filter to allow for all and specific user's playlists
         # if checks for specific user
         if creator is not None and creator == "current":
-            playlists = Playlist.objects.filter(creator__user=request.auth.user)
+            playlists = Playlist.objects.filter(creator__user=request.auth.user_id)
         else:
             # otherwise get all playlists & filter by approved and dates in the past
-            playlists = Playlist.objects.all().order_by("-name")
+            playlists = Playlist.objects.all().order_by("-id")
         
         serializer = PlaylistSerializer(playlists, many=True, context={'request': request})
         return Response(serializer.data)
@@ -100,12 +99,12 @@ class PlaylistView(ViewSet):
         """
 
         creator = Creator.objects.get(user=request.user.id)
-        episode_id = Episode.objects.get(pk=request.data['episode_id'])
+        # episode_id = Episode.objects.get(pk=request.data['episode_id'])
         title = request.data.get("name")
         
         playlist = Playlist.objects.create(
             creator = creator,
-            episode = episode_id,
+            # episode = episode_id,
             name = title,
         )
 

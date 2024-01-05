@@ -1,0 +1,98 @@
+[
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 1,
+    "fields": {
+      "episode": 1,
+      "playlist": 5
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 2,
+    "fields": {
+      "episode": 2,
+      "playlist": 4
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 3,
+    "fields": {
+      "episode": 2,
+      "playlist": 1
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 4,
+    "fields": {
+      "episode": 2,
+      "playlist": 2
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 5,
+    "fields": {
+      "episode": 13,
+      "playlist": 4
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 6,
+    "fields": {
+      "episode": 14,
+      "playlist": 6
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 7,
+    "fields": {
+      "episode": 11,
+      "playlist": 2
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 8,
+    "fields": {
+      "episode": 12,
+      "playlist": 4
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 9,
+    "fields": {
+      "episode": 12,
+      "playlist": 1
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 10,
+    "fields": {
+      "episode": 12,
+      "playlist": 2
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 11,
+    "fields": {
+      "episode": 13,
+      "playlist": 5
+    }
+  },
+  {
+    "model": "playlistapi.playlistepisode",
+    "pk": 12,
+    "fields": {
+      "episode": 14,
+      "playlist": 3
+    }
+  }
+]

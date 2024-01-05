@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from django.conf.urls.static import static
-from playlistapi.views import UserView, TagView, EpisodeView, EpisodeTagView, FriendView, PlaylistView
+from playlistapi.views import UserView, TagView, EpisodeView, EpisodeTagView, FriendView, PlaylistView, PlaylistEpisodeView
 from . import settings
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -11,6 +11,7 @@ router.register(r"playlists", PlaylistView, "playlist")
 router.register(r"friends", FriendView, "friend")
 router.register(r"episodes", EpisodeView, "episode")
 router.register(r"episode_tags", EpisodeTagView, "episode tag")
+router.register(r"playlist_episodes", PlaylistEpisodeView, "playlist episode")
 router.register(r"users", UserView, "user") 
 
 urlpatterns = [

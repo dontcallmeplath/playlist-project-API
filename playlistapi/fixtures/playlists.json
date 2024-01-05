@@ -4,189 +4,47 @@
     "pk": 1,
     "fields": {
       "name": "NeckBromancer",
-      "creator": 1,
-      "episode": 1
+      "creator": 2
     }
   },
   {
     "model": "playlistapi.playlist",
     "pk": 2,
     "fields": {
-      "name": "NeckBromancer",
-      "creator": 1,
-      "episode": 2
+      "name": "Brain go Brrrrr",
+      "creator": 2
     }
   },
   {
     "model": "playlistapi.playlist",
     "pk": 3,
     "fields": {
-      "name": "NeckBromancer",
-      "creator": 1,
-      "episode": 3
+      "name": "Party Rock",
+      "creator": 2
     }
   },
   {
     "model": "playlistapi.playlist",
     "pk": 4,
     "fields": {
-      "name": "NeckBromancer",
-      "creator": 1,
-      "episode": 4
+      "name": "Switcheroo",
+      "creator": 4
     }
   },
   {
     "model": "playlistapi.playlist",
     "pk": 5,
     "fields": {
-      "name": "NeckBromancer",
-      "creator": 1,
-      "episode": 5
+      "name": "All Buttered UP",
+      "creator": 1
     }
   },
-
   {
     "model": "playlistapi.playlist",
     "pk": 6,
     "fields": {
-      "name": "Brain go Brrrrr",
-      "creator": 2,
-      "episode": 6
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 7,
-    "fields": {
-      "name": "Brain go Brrrrr",
-      "creator": 2,
-      "episode": 7
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 8,
-    "fields": {
-      "name": "Brain go Brrrrr",
-      "creator": 2,
-      "episode": 8
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 9,
-    "fields": {
-      "name": "Brain go Brrrrr",
-      "creator": 2,
-      "episode": 9
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 10,
-    "fields": {
-      "name": "Party Rock",
-      "creator": 3,
-      "episode": 10
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 11,
-    "fields": {
-      "name": "Party Rock",
-      "creator": 3,
-      "episode": 11
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 12,
-    "fields": {
-      "name": "Party Rock",
-      "creator": 3,
-      "episode": 12
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 13,
-    "fields": {
-      "name": "Party Rock",
-      "creator": 3,
-      "episode": 13
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 14,
-    "fields": {
-      "name": "Switcheroo",
-      "creator": 4,
-      "episode": 5
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 15,
-    "fields": {
-      "name": "Switcheroo",
-      "creator": 4,
-      "episode": 4
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 16,
-    "fields": {
-      "name": "Switcheroo",
-      "creator": 4,
-      "episode": 3
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 17,
-    "fields": {
-      "name": "All Buttered UP",
-      "creator": 5,
-      "episode": 3
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 18,
-    "fields": {
-      "name": "All Buttered UP",
-      "creator": 5,
-      "episode": 2
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 19,
-    "fields": {
-      "name": "All Buttered UP",
-      "creator": 5,
-      "episode": 1
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 20,
-    "fields": {
       "name": "Who Culled Know",
-      "creator": 6,
-      "episode": 13
-    }
-  },
-  {
-    "model": "playlistapi.playlist",
-    "pk": 21,
-    "fields": {
-      "name": "Who Culled Know",
-      "creator": 6,
-      "episode": 10
+      "creator": 3
     }
   }
 ]

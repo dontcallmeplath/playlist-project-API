@@ -1,9 +1,9 @@
-from django.http import HttpResponseServerError
+# from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework.serializers import ModelSerializer
 from rest_framework import status
-from playlistapi.models import Tag, EpisodeTag
+from playlistapi.models import EpisodeTag
 
 class EpisodeTagSerializer(ModelSerializer):
 

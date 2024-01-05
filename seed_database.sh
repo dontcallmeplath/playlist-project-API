@@ -10,6 +10,7 @@ python3 manage.py loaddata creators
 python3 manage.py loaddata friends
 python3 manage.py loaddata episodes
 python3 manage.py loaddata playlists
+python3 manage.py loaddata playlist_episodes
 python3 manage.py loaddata tags
 python3 manage.py loaddata episode_tags
 # python3 manage.py loaddata

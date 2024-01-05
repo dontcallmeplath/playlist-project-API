@@ -10,4 +10,5 @@ class Episode(models.Model):
     image = models.URLField(max_length=155)
     # TV-Y, TV-Y7, TV-G, TV-PG, TV-14, TV-MA
     rating = models.CharField(max_length=5)
-    tags = models.ManyToManyField("Tag", through='EpisodeTag')
+    tag = models.ManyToManyField("Tag", through='EpisodeTag')
+    playlist = models.ManyToManyField("Playlist", through='PlaylistEpisode')

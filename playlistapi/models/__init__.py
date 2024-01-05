@@ -4,4 +4,5 @@ from .friend import Friend
 from .episode import Episode
 from .episodetag import EpisodeTag
 from .playlist import Playlist
+from .playlistepisode import PlaylistEpisode
 from .tag import Tag

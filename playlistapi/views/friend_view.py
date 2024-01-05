@@ -1,20 +1,58 @@
-from django.http import HttpResponseServerError
+# from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
-from rest_framework.serializers import ModelSerializer, SerializerMethodField
+from rest_framework.serializers import ModelSerializer
+# from rest_framework.serializers import SerializerMethodField
 from rest_framework import status
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from playlistapi.models import Friend, Creator
+
+# class UserSerializer(ModelSerializer):
+#     """JSON serializer for user tied to creator"""
+
+#     full_name = SerializerMethodField('get_full_name')
+
+#     def get_full_name(self, obj):
+#         return f'{obj.first_name} {obj.last_name}'
+
+#     class Meta:
+#         model = User
+#         fields = ("full_name",)
+
+# class CreatorSerializer(ModelSerializer):
+#     """JSON serializer for creator of friend"""
+
+#     user = UserSerializer(many=False)
+
+#     class Meta:
+#         model = Creator
+#         fields = ("id", "user",)
+
+class FriendSerializer(ModelSerializer):
+    """JSON serializer for friends"""
+
+    # creator = CreatorSerializer(many=False)
+
+    # def get_is_creator(self, obj):
+    #     user = None
+    #     request = self.context.get("request")
+    #     if request and hasattr(request, "user"):
+    #         user = request.user
+    #     return user == obj.creator.user
+
+    class Meta:
+        model = Friend
+        fields = ("creator_id", "email", "name", "id")        
 
 class FriendView(ViewSet):
     def list(self, request):
         # get query parameters from request for specific user
-        creator = self.request.query_params.get('creator', None)
+        creator = self.request.query_params.get('creator_id', None)
 
         # filter to allow for all and specific user's friends
         # if checks for specific user
         if creator is not None and creator == "current":
-            friends = Friend.objects.filter(creator__user=request.auth.user)
+            friends = Friend.objects.filter(creator__user=request.auth.user_id)
         else:
             return Response({"message": "This creator hasn't added friends yet."}, status=status.HTTP_404_NOT_FOUND)
         
@@ -82,40 +120,3 @@ class FriendView(ViewSet):
         
         except Exception as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
-# class UserSerializer(ModelSerializer):
-#     """JSON serializer for user tied to creator"""
-
-#     full_name = SerializerMethodField('get_full_name')
-
-#     def get_full_name(self, obj):
-#         return f'{obj.first_name} {obj.last_name}'
-
-#     class Meta:
-#         model = User
-#         fields = ("full_name",)
-
-# class CreatorSerializer(ModelSerializer):
-#     """JSON serializer for creator of friend"""
-
-#     user = UserSerializer(many=False)
-
-#     class Meta:
-#         model = Creator
-#         fields = ("id", "user",)
-
-class FriendSerializer(ModelSerializer):
-    """JSON serializer for friends"""
-
-    # creator = CreatorSerializer(many=False)
-
-    # def get_is_creator(self, obj):
-    #     user = None
-    #     request = self.context.get("request")
-    #     if request and hasattr(request, "user"):
-    #         user = request.user
-    #     return user == obj.creator.user
-
-    class Meta:
-        model = Friend
-        fields = ("creator_id", "email", "name", "id")        
