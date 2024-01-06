@@ -9,9 +9,7 @@ from playlistapi.models import Episode
 class EpisodeSerializer(ModelSerializer):
     class Meta:
         model = Episode
-        fields = ['id', 'series_name', 'episode_name', 'serial',
-                  'description', 'image', 'rating', ]
-        # 'tag', 'playlist',
+        fields = '__all__'
 
 
 class EpisodeView(ViewSet):

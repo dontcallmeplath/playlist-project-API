@@ -8,13 +8,15 @@ from .episode_view import EpisodeSerializer
 from playlistapi.models import Creator, Playlist, Episode
 from django.contrib.auth.models import User
 
+
 class PlaylistSerializer(ModelSerializer):
-    
-    creator_id = CreatorSerializer(many=False).fields['id']
-    
+    # creator_id = CreatorSerializer(many=False).fields['id']
+    episode = EpisodeSerializer(many=True, read_only=True)
+
     class Meta:
         model = Playlist
-        fields = ('id', 'name', 'creator_id', )
+        fields = '__all__'
+
 
 class PlaylistView(ViewSet):
     def list(self, request):
@@ -24,14 +26,16 @@ class PlaylistView(ViewSet):
         # filter to allow for all and specific user's playlists
         # if checks for specific user
         if creator is not None and creator == "current":
-            playlists = Playlist.objects.filter(creator__user=request.auth.user_id)
+            playlists = Playlist.objects.filter(
+                creator__user=request.auth.user_id)
         else:
             # otherwise get all playlists & filter by approved and dates in the past
             playlists = Playlist.objects.all().order_by("-id")
-        
-        serializer = PlaylistSerializer(playlists, many=True, context={'request': request})
+
+        serializer = PlaylistSerializer(
+            playlists, many=True, context={'request': request})
         return Response(serializer.data)
-    
+
     def retrieve(self, request, pk=None):
         """Handle GET requests for a single playlist
 
@@ -41,14 +45,15 @@ class PlaylistView(ViewSet):
         try:
             playlist = Playlist.objects.get(pk=pk)
             # Get associated tags for playlist
-            
-            playlist_serializer = PlaylistSerializer(playlist, context={"request": request})
+
+            playlist_serializer = PlaylistSerializer(
+                playlist, context={"request": request})
             playlist_data = playlist_serializer.data
-            
+
             return Response(playlist_data, status=status.HTTP_200_OK)
         except Playlist.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
-        
+
     def destroy(self, request, pk=None):
         """Handle DELETE requests for a single playlist
 
@@ -63,10 +68,10 @@ class PlaylistView(ViewSet):
             return Response({"message": "You are not the creator of this playlist."}, status=status.HTTP_403_FORBIDDEN)
         except Playlist.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
-        
+
         except Exception as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
     def update(self, request, pk=None):
         """Handle PUT requests for a single playlist
 
@@ -77,20 +82,23 @@ class PlaylistView(ViewSet):
             playlist = Playlist.objects.get(pk=pk)
 
             if playlist.creator.user_id == request.user.id:
-                serializer = PlaylistSerializer(data=request.data, partial=True)
+                serializer = PlaylistSerializer(
+                    data=request.data, partial=True)
                 if serializer.is_valid():
-                    playlist.episode = Episode.objects.get(pk=request.data["episode_id"])
+                    playlist.episode = Episode.objects.get(
+                        pk=request.data["episode_id"])
                     playlist.title = serializer.validated_data["name"]
                     playlist.creator = serializer.validated_data["creator_id"]
                     playlist.save()
 
-                    serializer = PlaylistSerializer(playlist, context={"request": request})
+                    serializer = PlaylistSerializer(
+                        playlist, context={"request": request})
                     return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             return Response({"message": "You are not the author of this playlist."}, status=status.HTTP_403_FORBIDDEN)
         except Playlist.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
-        
+
     def create(self, request):
         """Handle POST operations
 
@@ -101,15 +109,16 @@ class PlaylistView(ViewSet):
         creator = Creator.objects.get(user=request.user.id)
         # episode_id = Episode.objects.get(pk=request.data['episode_id'])
         title = request.data.get("name")
-        
+
         playlist = Playlist.objects.create(
-            creator = creator,
+            creator=creator,
             # episode = episode_id,
-            name = title,
+            name=title,
         )
 
         try:
-            serializer = PlaylistSerializer(playlist, context={"request": request} )
+            serializer = PlaylistSerializer(
+                playlist, context={"request": request})
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
-            return Response(ex, status=status.HTTP_400_BAD_REQUEST)    
+            return Response(ex, status=status.HTTP_400_BAD_REQUEST)

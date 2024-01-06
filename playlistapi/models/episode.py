@@ -1,6 +1,7 @@
 from django.db import models
 # from django.contrib.auth.models import User
 
+
 class Episode(models.Model):
     series_name = models.CharField(max_length=155)
     episode_name = models.CharField(max_length=155)
@@ -10,5 +11,5 @@ class Episode(models.Model):
     image = models.URLField(max_length=155)
     # TV-Y, TV-Y7, TV-G, TV-PG, TV-14, TV-MA
     rating = models.CharField(max_length=5)
-    tag = models.ManyToManyField("Tag", through='EpisodeTag')
-    playlist = models.ManyToManyField("Playlist", through='PlaylistEpisode')
+    tag = models.ManyToManyField(
+        "Tag", through='EpisodeTag', related_name='episode_tag')

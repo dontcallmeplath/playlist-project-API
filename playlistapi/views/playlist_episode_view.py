@@ -1,22 +1,36 @@
 from rest_framework.serializers import ModelSerializer
-from .episode_view import EpisodeSerializer
-from .playlist_view import PlaylistSerializer
-from .creator_view import CreatorSerializer
+# from .episode_view import EpisodeSerializer
+# from .playlist_view import PlaylistSerializer
+# from .creator_view import CreatorSerializer
 from playlistapi.models import PlaylistEpisode, Episode, Playlist
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 
 
+class EpisodeSerializer(ModelSerializer):
+    class Meta:
+        model = Episode
+        fields = ['id', 'rating', 'image', 'series_name', 'episode_name',
+                  'description',]
+
+
+class PlaylistSerializer(ModelSerializer):
+    episode = EpisodeSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Playlist
+        fields = ['id', 'creator', 'name', 'episode',]
+
+
 class PlaylistEpisodeSerializer(ModelSerializer):
 
-    episode = EpisodeSerializer(many=False)
-    creator_id = CreatorSerializer(many=False).fields['id']
+    # episode = EpisodeSerializer(many=True, read_only=True)
     playlist = PlaylistSerializer(many=False)
 
     class Meta:
         model = PlaylistEpisode
-        fields = ['id', 'creator_id', 'playlist', 'episode',]
+        fields = ['playlist',]
 
 
 class PlaylistEpisodeView(ViewSet):
@@ -38,8 +52,8 @@ class PlaylistEpisodeView(ViewSet):
                 playlist_episodes = creator_playlists.all().filter(
                     playlist__id=playlist_query)
             else:
-                playlist_episodes = creator_playlists.order_by(
-                    '-playlist_id')
+                playlist_episodes = creator_playlists
+
         else:
             return Response({"message": "This creator hasn't added playlists yet."}, status=status.HTTP_404_NOT_FOUND)
 
