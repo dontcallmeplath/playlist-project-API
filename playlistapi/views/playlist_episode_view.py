@@ -30,7 +30,7 @@ class PlaylistEpisodeSerializer(ModelSerializer):
 
     class Meta:
         model = PlaylistEpisode
-        fields = ['playlist',]
+        fields = ['id', 'playlist',]
 
 
 class PlaylistEpisodeView(ViewSet):
@@ -61,10 +61,45 @@ class PlaylistEpisodeView(ViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request):
-        serializer = PlaylistEpisodeSerializer(data=request.data)
+        """Handle POST operations
 
-        if serializer.is_valid():
-            serializer.save()
+        Returns
+            Response -- JSON serialized playlist instance
+        """
+        episode = request.data.get("episode_id")
+        playlist = request.data.get("playlist_id")
+
+        playlist_episode = PlaylistEpisode.objects.create(
+            episode_id=episode,
+            playlist_id=playlist,
+        )
+
+        try:
+            serializer = PlaylistEpisodeSerializer(
+                playlist_episode, context={"request": request})
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as ex:
+            return Response(ex, status=status.HTTP_400_BAD_REQUEST)
+
+    def destroy(self, request, pk=None):
+        """Handle DELETE requests for a single item on playlist episode
+
+        Returns:
+            Response -- empty response body
+        """
+        creator = self.request.query_params.get('creator_id', None)
+
+        try:
+            playlist_episode = PlaylistEpisode.objects.get(pk=pk)
+
+            if pk:
+                playlist_episode.delete()
+                return Response({"message": "Delete successful"}, status=status.HTTP_204_NO_CONTENT)
+            else:
+                return Response({"message": "You do not have admin rights or invalid parameters"}, status=status.HTTP_403_FORBIDDEN)
+
+        except PlaylistEpisode.DoesNotExist as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

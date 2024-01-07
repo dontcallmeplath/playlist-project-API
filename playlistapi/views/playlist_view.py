@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 
 class PlaylistSerializer(ModelSerializer):
     # creator_id = CreatorSerializer(many=False).fields['id']
-    episode = EpisodeSerializer(many=True, read_only=True)
+    # episode = EpisodeSerializer(many=True, read_only=True)
 
     class Meta:
         model = Playlist
@@ -81,21 +81,26 @@ class PlaylistView(ViewSet):
         try:
             playlist = Playlist.objects.get(pk=pk)
 
-            if playlist.creator.user_id == request.user.id:
-                serializer = PlaylistSerializer(
-                    data=request.data, partial=True)
-                if serializer.is_valid():
-                    playlist.episode = Episode.objects.get(
-                        pk=request.data["episode_id"])
-                    playlist.title = serializer.validated_data["name"]
-                    playlist.creator = serializer.validated_data["creator_id"]
-                    playlist.save()
+            # Check if the user is the creator of the playlist
+            if playlist.creator.user_id != request.user.id:
+                return Response({"message": "You are not the creator of this playlist."}, status=status.HTTP_403_FORBIDDEN)
 
-                    serializer = PlaylistSerializer(
-                        playlist, context={"request": request})
-                    return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            return Response({"message": "You are not the author of this playlist."}, status=status.HTTP_403_FORBIDDEN)
+            serializer = PlaylistSerializer(
+                playlist, data=request.data, partial=True)
+
+            if serializer.is_valid():
+                # Update only the provided fields
+                serializer.save()
+
+                # Re-serialize the playlist to include related data
+                updated_playlist = Playlist.objects.get(pk=pk)
+                serialized_playlist = PlaylistSerializer(
+                    updated_playlist, context={"request": request})
+
+                return Response(serialized_playlist.data, status=status.HTTP_200_OK)
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
         except Playlist.DoesNotExist as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
