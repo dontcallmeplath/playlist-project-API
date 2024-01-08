@@ -20,7 +20,7 @@ class TagView(ViewSet):
         Returns:
             Response -- JSON serialized array
         """
-        tags = Tag.objects.all().order_by('label')
+        tags = Tag.objects.all()
         serializer = TagSerializer(tags, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

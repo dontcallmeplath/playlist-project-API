@@ -85,7 +85,7 @@ class PlaylistEpisodeView(ViewSet):
         """Handle DELETE requests for a single item on playlist episode
 
         Returns:
-            Response -- empty response body
+            Response -- "Delete successful"
         """
         creator = self.request.query_params.get('creator_id', None)
 

@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.serializers import ModelSerializer
 from rest_framework import status
 from .creator_view import CreatorSerializer
-from .episode_view import EpisodeSerializer
+from .episode_view import EpisodeListSerializer
 from playlistapi.models import Creator, Playlist, Episode
 from django.contrib.auth.models import User
 
